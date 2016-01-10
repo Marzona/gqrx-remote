@@ -21,6 +21,8 @@ Features
 - auto bookmark frequencies that are discovered as active
 
 Suggestions are welcome!
+Check the issues page for the current things I'm working on.
+
 
 Requirements
 ---
@@ -56,18 +58,19 @@ Screenshots
 This software is built using Python default GUI -- [Tkinter](https://docs.python.org/3/library/tkinter.html) with [Ttk](https://docs.python.org/3/library/tkinter.ttk.html) -- which allows us to have an almost-native cross-platform look and feel while using the same code.
 
 **Linux**
+
 ![gqrx-remote-linux](https://github.com/Marzona/gqrx-remote/blob/master/screenshots/gqrx-remote.png)
-
-
 
 
 Bookmark Database
 ---
 
-This software consists of two files:
+This software consists of resources files and the code.
+The resource files are the following:
 
-- gqrx-remote.py
-- gqrx-bookmarks.csv (the bookmark database)
+- gqrx-remote.conf : the gqrx-remote configuration file
+- gqrx-bookmarks.csv : the bookmark file
+
 
 The file ```gqrx-bookmarks.csv``` consists on a standard comma-separated values file. For reference, the following example file is provided:
 
@@ -86,3 +89,25 @@ The file ```gqrx-bookmarks.csv``` consists on a standard comma-separated values 
 442036000,FM,Digital
 1090000000,FM,ADBS
 ```
+
+The file ```gqrx-remote.conf``` is a simple key=value file that stores the configuration of the tool and the UI. Here is an example:
+```
+range_min=24
+delay=6
+always_on_top=false
+port=7356
+interval=15
+range_max=1800
+auto_bookmark=false
+save_exit=false
+sgn_level=25
+hostname=127.0.0.1
+
+```
+
+
+All the code is organized in:
+
+- gqrx-remote.py : the main python code for executing the tool
+- a "modules" folder : contains all the python modules with the code
+- a "test" folder : the code in this folder is used for testing (unit tests only)
