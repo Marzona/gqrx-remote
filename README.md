@@ -1,3 +1,5 @@
+This fork is now abandoned in favor of https://github.com/Marzona/rig-remote
+
 gqrx-remote
 ===========
 
